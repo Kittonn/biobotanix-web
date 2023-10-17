@@ -11,8 +11,7 @@ export default function App() {
       setFile(URL.createObjectURL(e.target.files[0]));
       if (e.target.files[0]) {
         const response = await uploadService.uploadFileService(e.target.files[0])
-        console.log(response.prediction)
-        setResult(response.prediction)
+        setResult(response?.prediction)
       }
     }
   }
@@ -60,13 +59,18 @@ export default function App() {
                 )}
               </div>
             </div>
-            {result &&
-              <div>
+            {result ?
+              (<div>
                 <div className="mb-4 pt-0 flex flex-col">
                   <label className="mb-2 text-gray-800 text-lg font-light">Name</label>
                   <input type="text" className="border-2 rounded h-10 px-6 text-lg text-gray-600 focus:outline-none" value={result} disabled />
                 </div>
-              </div>}
+              </div>) : (
+                <div className="mb-4 pt-0 flex flex-col">
+                  <label className="mb-2 text-gray-800 text-lg font-light">Name</label>
+                  <input type="text" className="border-2 rounded h-10 px-6 text-lg text-gray-600 focus:outline-none" value="No prediction" disabled />
+                </div>
+              )}
           </form>
         </div>
       </div>
