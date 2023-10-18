@@ -4,30 +4,34 @@ import { medicinalLeaf } from "./mocks/data";
 import { uploadService } from "./services/upload.service";
 
 export default function App() {
-
   const [file, setFile] = useState<string | null>(null);
-  const [result, setResult] = useState<string>("")
+  const [result, setResult] = useState<string>("");
   const [data, setData] = useState<IMedicinalLeaf | null>(null);
 
   async function handleFileChange(e: React.ChangeEvent<HTMLInputElement>): Promise<void> {
-    if (e.target.files) {
-      setFile(URL.createObjectURL(e.target.files[0]));
-      if (e.target.files[0]) {
-        const response = await uploadService.uploadFileService(e.target.files[0])
-        setResult(response?.prediction)
-        medicinalLeaf.map((item) => {
-          if (item.eng_name === response?.prediction) {
-            setData(item)
-          }
-        }
-        )
-      }
+    const uploadedFile = e.target.files?.[0];
+
+    if (!uploadedFile) {
+      return;
+    }
+
+    setFile(URL.createObjectURL(uploadedFile));
+
+    try {
+      const response = await uploadService.uploadFileService(uploadedFile);
+      setResult(response?.prediction);
+
+      const matchingLeaf = medicinalLeaf.find((item) => item.eng_name === response?.prediction);
+      setData(matchingLeaf || null);
+    } catch (error) {
+      console.error("Error uploading file:", error);
     }
   }
+
   function handleRemoveFile(): void {
     setFile(null);
-    setResult("")
-    setData(null)
+    setResult("");
+    setData(null);
   }
 
   return (
