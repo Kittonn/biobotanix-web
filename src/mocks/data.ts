@@ -231,5 +231,6 @@ export const medicinalLeaf: IMedicinalLeaf[] = [
     { thai_name: 'โหราพา', eng_name: 'Tulsi', properties: 'ชงดื่มกระตุ้นระบบภูมิคุ้มกัน บดผสมน้ำเช็ดตามร่างกายสร้างความเย็นให้กับร่างกาย', scientific_name: 'Ocimum sanctum' },
     { thai_name: 'ตีนชะนี', eng_name: 'Ashoka', properties: 'รักษาอาการปวดเมื่อย ปวดท้อง และมีอาการเลือดไหลเวียนผิดปกติ', scientific_name: 'Saraca asoca' },
     { thai_name: 'การบูร', eng_name: 'Camphor', properties: 'ใช้บรรเทาอาการอักเสบต่างๆ ใช้ในการผลิตเครื่องหอมต่างอีกด้วย', scientific_name: 'Cinnamomum camphora' },
-    { thai_name: 'กะเพรา', eng_name: 'Kamakasturi(sweet basil)', properties: ' ขับลมแก้ปวดท้องอุจจาระ แก้ลมตานซาง, แก้จุกเสียด แก้คลื่นเหียนอาเจียน แก้โรคบิด, และขับลม', scientific_name: 'Ocimum tenuiflorum' }
+    { thai_name: 'กะเพรา', eng_name: 'Kamakasturi(sweet basil)', properties: ' ขับลมแก้ปวดท้องอุจจาระ แก้ลมตานซาง, แก้จุกเสียด แก้คลื่นเหียนอาเจียน แก้โรคบิด, และขับลม', scientific_name: 'Ocimum tenuiflorum' },
+    { thai_name: 'หอมแขก', eng_name: 'Curry', properties: 'ช่วยลดน้ำหนัก ช่วยย่อยอาหาร ต้นเคอร์รี่ลีฟใช้ขับของเสียในลำไส้ และมีคุณสมบัติเป็นยาระบายอ่อนๆ ช่วยลดอาการแพ้ท้องและคลื่นไส้ ช่วยบรรเทาอาการปวดเมื่อย', scientific_name: 'Murraya koenigii' }
 ]
