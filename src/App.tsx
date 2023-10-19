@@ -78,7 +78,7 @@ export default function App() {
                   <label className="mb-2 text-gray-800 text-lg font-light">Name</label>
                   <input type="text" className="border-2 rounded h-10 px-6 text-lg text-gray-600 focus:outline-none" value={result} disabled />
                   <label className="my-2 text-gray-800 text-lg font-light">Properties</label>
-                  <textarea id="message" className="block p-2.5 px-6 w-full bg-gray-50 rounded-lg border border-gray-300 text-lg text-gray-600" value={data?.properties ? data.properties : 'No Properties Found.'} disabled></textarea>
+                  <textarea rows={7} id="message" className="block p-2.5 px-6 w-full bg-gray-50 rounded-lg border border-gray-300 text-lg text-gray-600" value={data?.properties ? data.properties : 'No Properties Found.'} disabled></textarea>
                   <label className="my-2 text-gray-800 text-lg font-light">Scientific Name</label>
                   <input type="text" className="border-2 rounded h-10 px-6 text-lg text-gray-600 focus:outline-none" value={data?.scientific_name ? data.scientific_name : 'No Sciencetific Name'} disabled />
                   <label className="my-2 text-gray-800 text-lg font-light">Thai Name</label>
